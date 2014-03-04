@@ -75,7 +75,7 @@ int main(int argc, char *argv[]) {
   ros::Subscriber cam_info_sub = n.subscribe(std::string("ardrone/bottom/camera_info"), 5, &Pixel2XY::updateCamInfo, &pixel2XY);
   ros::Subscriber pose_sub = n.subscribe(std::string("ardrone/pose"), 1000, &Pixel2XY::updatePose, &pixel2XY);
   while (!pixel2XY.ready()) ros::spinOnce();
-  //ROS_INFO("PIXEL2XY ready");
+  ROS_INFO("PIXEL2XY ready");
   
   ros::Subscriber pix_sub = n.subscribe(pix_topic, 1000, &Pixel2XY::transform, &pixel2XY); 
 
